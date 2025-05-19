@@ -1,13 +1,12 @@
-import { Button } from '../lib/main'
-import './App.css'
+import { Button } from "../lib/main";
+import "./App.css";
 
 function App() {
-
   return (
     <>
-     <Button>hi</Button>
+      <Button>hi</Button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
