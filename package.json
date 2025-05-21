@@ -1,8 +1,11 @@
 {
-  "name": "simkit",
-  "version": "0.0.0",
-  "type": "module",
-  "main": "dist/simkit.js",
+  "name": "simlib",
+  "version": "0.0.2",
+  "types": "dist/main.d.ts",
+  "main": "dist/simlib.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc --p ./tsconfig-build.json && vite build",
@@ -10,9 +13,10 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "npm run build"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "eslint-plugin-import": "^2.31.0",
@@ -69,5 +73,8 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
   }
 }

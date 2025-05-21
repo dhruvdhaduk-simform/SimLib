@@ -8,7 +8,11 @@ import dts from "vite-plugin-dts";
 export default defineConfig({
   plugins: [
     react(),
-    dts({ tsconfigPath: "./tsconfig.app.json", include: ["lib"] }),
+    dts({
+      tsconfigPath: "./tsconfig.app.json",
+      include: ["lib"],
+      exclude: ["lib/components/**/*.stories.ts"],
+    }),
   ],
   build: {
     lib: {
