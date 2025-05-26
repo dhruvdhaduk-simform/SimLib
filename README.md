@@ -35,3 +35,14 @@ import { Button } from 'simlib';
 - Create your component inside that folder. (i.e. `Button.tsx`);
 - Create the Stories for your component in the same folder. (i.e. `Button.stories.ts`)
 - Do not make changes to `any` file outside your component folder.
+
+### Components Offered :
+
+- Pagination
+- Select
+- Stepper
+- Splitter
+- Modal
+- Input with auto complete
+- Skeleton
+- Loader
