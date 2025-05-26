@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --p ./tsconfig-build.json && vite build",
-    "lint": "eslint .",
-    "lint:staged": "git diff --cached --name-only --diff-filter=ACM | grep '\\.\\(js\\|jsx\\|ts\\|tsx\\)$' | xargs eslint",
+    "lint": "eslint . --ignore-pattern 'dist/*' --ignore-pattern 'storybook-static/*'",
+    "lint:staged": "git diff --cached --name-only --diff-filter=ACM | grep '\\.\\(js\\|jsx\\|ts\\|tsx\\)$' | grep -vE '^(dist|storybook-static)/' | xargs eslint",
     "preview": "vite preview",
-    "format": "prettier --write ./src",
-    "format:staged": "git diff --cached --name-only --diff-filter=ACM | grep '\\.\\(js\\|jsx\\|ts\\|tsx\\|css\\|scss\\|json\\)$' | xargs --no-run-if-empty prettier --write",
+    "format": "prettier --write ./src --ignore-path .prettierignore",
+    "format:staged": "git diff --cached --name-only --diff-filter=ACM | grep '\\.\\(js\\|jsx\\|ts\\|tsx\\|css\\|scss\\|json\\)$' | grep -vE '^(dist|storybook-static)/' | xargs --no-run-if-empty prettier --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky && husky install"
