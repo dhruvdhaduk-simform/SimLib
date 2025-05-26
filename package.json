@@ -3,6 +3,10 @@
   "version": "0.0.4",
   "type": "module",
   "main": "dist/simlib.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc --p ./tsconfig-build.json && vite build",
