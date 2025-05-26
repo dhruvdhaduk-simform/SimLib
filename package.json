@@ -1,6 +1,6 @@
 {
   "name": "simlib",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/simlib.js",
   "types": "dist/main.d.ts",
