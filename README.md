@@ -22,6 +22,10 @@ import { Button } from 'simlib';
 
 ## Development
 
+### Checkout components in development :
+
+- [https://dev--simlib.netlify.app/](https://dev--simlib.netlify.app/)
+
 ### How to contribute ?
 
 - Fork this repo in your account. (Make sure to uncheck "Copy the `main` branch only")
