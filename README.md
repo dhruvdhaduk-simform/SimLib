@@ -40,6 +40,15 @@ import { Button } from 'simlib';
 - Create the Stories for your component in the same folder. (i.e. `Button.stories.ts`)
 - Do not make changes to `any` file outside your component folder.
 
+### Naming Conventions
+
+- For feature branch names, follow this convention :
+  - `component-name/sub-category`
+  - For Example : Loader/linear-loader
+- For commit messages, follow this convention :
+  - `action: description`
+  - For Example : "fix: fix bugs related to linear loader"
+
 ### Components Offered :
 
 - Pagination
