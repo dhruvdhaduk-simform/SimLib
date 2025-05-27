@@ -15,8 +15,8 @@ export interface NormalSelectProps
     Component {
   label: string;
   options: Array<{ value: string; display: string }>;
-  value?: string;
-  onChange?: (value: string) => void;
+  value: string;
+  onChange: (value: string) => void;
   disabled?: boolean;
 }
 
