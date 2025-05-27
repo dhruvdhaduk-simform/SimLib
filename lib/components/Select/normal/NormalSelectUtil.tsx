@@ -28,7 +28,6 @@ export function getSelectStyles(
       box-shadow: 0 0 4px 1px ${theme.Colors.focus};
     `}
 
-    color: ${state.disabled ? theme.Colors.disabled : '#000'};
     position: relative;
     user-select: none;
 
