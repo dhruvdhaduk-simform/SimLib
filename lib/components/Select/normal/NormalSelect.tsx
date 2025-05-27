@@ -1,0 +1,92 @@
+import React, { useState, useRef, useEffect } from 'react';
+
+import { useSimLibTheme } from '../../../hooks/theme';
+import type { Component } from '../../Component.type';
+import downArrow from '../assets/down_arrow.svg';
+
+import {
+  getDropdownStyles,
+  getOptionStyles,
+  getSelectStyles,
+} from './NormalSelectUtil';
+
+export interface NormalSelectProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'>,
+    Component {
+  label: string;
+  options: Array<{ value: string; display: string }>;
+  value?: string;
+  onChange?: (value: string) => void;
+  disabled?: boolean;
+}
+
+export const NormalSelect: React.FC<NormalSelectProps> = ({
+  label,
+  options,
+  value,
+  onChange,
+  disabled = false,
+  css: customCss,
+  ...props
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement>(null);
+  const selectTheme = useSimLibTheme();
+
+  const selectedOption = options.find((opt) => opt.value === value);
+
+  const toggleDropdown = () => {
+    if (!disabled) setIsOpen((prev) => !prev);
+  };
+
+  const handleOptionClick = (val: string) => {
+    onChange?.(val);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 0);
+  };
+
+  useEffect(() => {
+    const ctrl = new AbortController();
+
+    document.addEventListener('click', (e) => {
+      if (selectRef.current && !selectRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    });
+
+    return () => ctrl.abort();
+  }, []);
+
+  const selectStyles = getSelectStyles(selectTheme, { isOpen, disabled });
+
+  const dropdownStyles = getDropdownStyles(selectTheme);
+
+  const optionStyles = getOptionStyles(selectTheme);
+
+  return (
+    <div css={customCss} {...props}>
+      <div css={selectStyles} onClick={toggleDropdown} ref={selectRef}>
+        <span>{selectedOption?.display || `-- ${label} --`}</span>
+        <img src={downArrow} alt="" />
+        {isOpen && (
+          <div css={dropdownStyles}>
+            {options.map((opt) => (
+              <div
+                key={opt.value}
+                css={optionStyles}
+                onClick={() => handleOptionClick(opt.value)}
+              >
+                <span
+                  className={`${opt.value === selectedOption?.value ? 'selected' : ''}`}
+                >
+                  {opt.display}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
