@@ -13,10 +13,15 @@ import {
 export interface NormalSelectProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'>,
     Component {
+  /** Default label to show when no value is selected. */
   label: string;
+  /** List of options to select. */
   options: Array<{ value: string; display: string }>;
+  /** Currently selected value. */
   value: string;
+  /** Fired when user selects the new value. */
   onChange: (value: string) => void;
+  /** Disable the selector. */
   disabled?: boolean;
 }
 
