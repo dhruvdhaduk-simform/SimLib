@@ -31,7 +31,7 @@ export const NormalSelect: React.FC<NormalSelectProps> = ({
   value,
   onChange,
   disabled = false,
-  css: customCss,
+  css,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +70,7 @@ export const NormalSelect: React.FC<NormalSelectProps> = ({
   const optionStyles = getOptionStyles(selectTheme);
 
   return (
-    <div css={customCss} {...props}>
+    <div css={css} {...props}>
       <div css={selectStyles} onClick={toggleDropdown} ref={selectRef}>
         <span>{selectedOption?.display || `-- Choose a ${label} --`}</span>
         <DownArrow />
