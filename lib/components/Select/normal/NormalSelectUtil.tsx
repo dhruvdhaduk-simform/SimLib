@@ -94,8 +94,6 @@ export function getOptionStyles(theme: SimLibTheme) {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
       line-clamp: 1;
-
-      // background-color: red;
     }
 
     & > span.selected {
