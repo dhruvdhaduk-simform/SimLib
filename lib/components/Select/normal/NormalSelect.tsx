@@ -83,7 +83,7 @@ export const NormalSelect: React.FC<NormalSelectProps> = ({
                 onClick={() => handleOptionClick(opt.value)}
               >
                 <span
-                  className={`${opt.value === selectedOption?.value ? 'selected' : ''}`}
+                  className={`${opt.value === selectedOption?.value ? 'selected' : undefined}`}
                 >
                   {opt.display}
                 </span>
