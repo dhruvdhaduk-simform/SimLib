@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { useSimLibTheme } from '../../../hooks/theme';
 import type { Component } from '../../Component.type';
-import downArrow from '../assets/down_arrow.svg';
+import DownArrow from '../assets/DownArrow';
 
 import {
   getDropdownStyles,
@@ -73,7 +73,7 @@ export const NormalSelect: React.FC<NormalSelectProps> = ({
     <div css={customCss} {...props}>
       <div css={selectStyles} onClick={toggleDropdown} ref={selectRef}>
         <span>{selectedOption?.display || `-- Choose a ${label} --`}</span>
-        <img src={downArrow} alt="" />
+        <DownArrow />
         {isOpen && (
           <div css={dropdownStyles}>
             {options.map((opt) => (

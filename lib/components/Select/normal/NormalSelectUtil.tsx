@@ -45,14 +45,14 @@ export function getSelectStyles(
       line-clamp: 1;
     }
 
-    & > img {
+    & > svg {
       width: 1rem;
       height: 1rem;
     }
 
     ${state.isOpen &&
     `
-      & > img {
+      & > svg {
         rotate: 180deg; 
       }
     `}
