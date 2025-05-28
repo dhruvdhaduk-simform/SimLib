@@ -50,7 +50,7 @@ export const NormalSelect: Story = {
 
   args: {
     type: 'normal',
-    label: 'Choose a fruit',
+    label: 'fruit',
     options: FRUITS,
   },
 };

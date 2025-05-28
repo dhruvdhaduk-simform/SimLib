@@ -72,7 +72,7 @@ export const NormalSelect: React.FC<NormalSelectProps> = ({
   return (
     <div css={customCss} {...props}>
       <div css={selectStyles} onClick={toggleDropdown} ref={selectRef}>
-        <span>{selectedOption?.display || `-- ${label} --`}</span>
+        <span>{selectedOption?.display || `-- Choose a ${label} --`}</span>
         <img src={downArrow} alt="" />
         {isOpen && (
           <div css={dropdownStyles}>
