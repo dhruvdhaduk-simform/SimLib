@@ -8,9 +8,11 @@ type SelectProps = {
   type: 'normal';
 } & NormalSelectProps;
 
+const NormalSelectType = 'normal';
+
 /** Select input */
 export const Select: React.FC<SelectProps> = ({ type, ...props }) => {
-  if (type === 'normal') {
+  if (type === NormalSelectType) {
     return <NormalSelect {...props} />;
   }
 };
